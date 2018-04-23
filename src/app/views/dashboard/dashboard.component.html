@@ -1,33 +1,55 @@
-<nav class="navigation_home sticky">
-    <div class="top_header">
-      <div class="logo">
-          <img src="/assets/tick.svg">
-      </div>
-      <div class="nav_links">
-        <span><a href="" class="nav_pri">Home</a></span>
-        <span><a href="" class="nav_pri">About</a></span>
-        <span *ngIf="!authService.isLoggedIn()">
-          <a class="" href="" role="button" (click)="authService.logout()">Login</a>
-        </span>
-        <span *ngIf="authService.isLoggedIn()">
-          <a class="" href="" role="button" (click)="authService.logout()">Logout</a>
-        </span>
-      </div>
+<div>
+    <nav class="navigation_home sticky">
+        <div class="top_header">
+          <div class="logo">
+              <img src="/assets/tick.svg">
+          </div>
+          <div class="nav_links">
+            <span><a href="" class="nav_pri">Home</a></span>
+            <span><a href="" class="nav_pri">About</a></span>
+            <span *ngIf="!authService.isLoggedIn()">
+              <a class="" href="" role="button" (click)="authService.logout()">Login</a>
+            </span>
+            <span *ngIf="authService.isLoggedIn()">
+              <a class="" href="" role="button" (click)="authService.logout()">Logout</a>
+            </span>
+          </div>
+        </div>
+      </nav>
+        
+    <div class="container">
+    
+          <div class="top_heading">
+              <h1>Let's get some stuff done!</h1>
+            </div>
+        
+          <div class="container">
+            <!-- <div class="row">
+                <div class="inputTask" style="text-align: center;">
+                    <input type="text" placeholder="Enter a task!" id="taskValue" />
+                  </div>
+            </div> -->
+        
+            <div class="inputTask" style="text-align: center; margin-top: 0; width:100%;">
+                <input type="text" id="message" placeholder="Enter a task!" (keyup.enter)="Send($event.target.value)" [(ngModel)]="msgVal" />
+                <div id="taskList">
+                    <ul style="padding-left: 0; list-style: none;">
+                      <li *ngFor="let item of items | async" style="width: 100%;">
+                        <div class="row task" [ngClass] = "{ 'greenTask': item.done == true }">
+                          <div class="col" (click)="complete(item)" >
+                              
+                                  {{item.message}}
+                            
+                          </div>          
+                        </div>
+                      </li>
+                    </ul>
+                  
+                </div>
+            </div>
+            
+          </div>  
     </div>
-</nav>
+</div>
 
-<section class="top">
-  <div class="top_heading">
-    <h1>Let's get some stuff done!</h1>
-    <input type="text" id="message" placeholder="Add a task!" (keyup.enter)="Send($event.target.value)" [(ngModel)]="msgVal" />
-  </div>
-</section>
-
-<section class="task_list">
-  <h3>Here's your list of tasks</h3>
-  <div class="list">
-    <ul>
-      <li class="task" *ngFor="let item of items | async">{{item.message}}</li>
-    </ul>
-  </div>
-</section>
+ 

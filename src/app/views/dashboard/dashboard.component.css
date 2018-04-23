@@ -8,13 +8,26 @@
 * {
     font-family: 'Nunito', sans-serif;
     scroll-behavior: smooth;
-    background-color: #FFFFFF;
-    margin: 0px;
 }
 
 /*
 Start of the navigation bar.
 */
+
+.container {
+	width: 100%;
+	display: block;
+	flex-wrap: wrap;
+	padding-right: 10vw;
+	padding-left: 10vw;
+	margin-top: 3rem;
+}
+
+.row {
+    width: auto !important;
+    display: block;
+}
+
 .navigation_home {
     width: 100%;
     padding-bottom: 2vh;
@@ -23,8 +36,6 @@ Start of the navigation bar.
 
 .top_header {
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
 }
 
 .logo {
@@ -67,65 +78,45 @@ Start of the navigation bar.
 }
 
 .top_heading {
-    width: 100%;
-    margin-top: 20vh;
+    margin-top: 9rem;
+    text-align: center;
 }
 
 .top_heading h1 {
     color: #383838;
-    font-size: 3.20em;
+    font-size: 3.20rem;
     letter-spacing: 4px;
     padding-left: 10vw;
     padding-right: 10vw;
 }
 
-#message {
-    width: 75%;
-    margin-top: 3vh;
-    margin-left: 10vw;
-    margin-right: 10vw;
-    padding-left: 2vw;
-    padding-right: 2vw;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-    font-size: 1.96em;
-    box-shadow: 8px 10px 20px 0 rgba(46, 61, 73, .36);
-    border: none;
-    color: #383838;
-}
-
-.task_list {
+input#message {
+    background:#fff;
+    box-shadow: 0px 3px 12px 0px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(200, 200, 200, 0.5);
+    font-size:130%;
     width: 100%;
-    padding-left: 10vw;
-    padding-right: 10vw;
+    font-weight:400;
+    margin-bottom: 2rem;
+    padding:1.2em 1em;
 }
 
+.task {
+    box-shadow: 0px 3px 12px 0px rgba(0, 0, 0, 0.1);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(200, 200, 200, 0.5);
+    padding: 2rem;
+    color: black;
+    font-size: 130%;
+    margin: 3rem;
 
-.task_list h3 {
-    color: #383838;
-    font-size: 1.96em;
-    margin-top: 8vh;
-    letter-spacing: 2px;
-    font-weight: lighter;
 }
 
-.list {
-    width: 100%;
-    text-align: left;
-    align-items: left;
+.greenTask {
+    /* border-top: 1px solid grey;
+    border-bottom: 1px solid grey; */
+    background-color: rgb(94, 255, 102);
+    padding: 2rem;
+    color: #fff;
 }
 
-.list ul {
-    list-style: none;
-}
-
-.list ul li {
-    width: 75%;
-    color: #383838;
-    font-size: 1.44em;
-    border: none;
-    padding: 1.5rem;
-    margin-top: 3vh;
-    margin-bottom: 3vh;
-    box-shadow: 8px 10px 20px 0 rgba(46, 61, 73, .2);
-}
