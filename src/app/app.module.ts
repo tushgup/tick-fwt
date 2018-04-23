@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutes } from './app.routes';
 
@@ -24,6 +25,7 @@ import { AuthGuard } from 'app/services/auth-guard.service';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutes,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,

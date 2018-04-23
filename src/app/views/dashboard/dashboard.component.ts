@@ -16,9 +16,11 @@ export class DashboardComponent implements OnInit {
   user: Observable<firebase.User>;
   items: FirebaseListObservable<any[]>;
   msgVal = '';
+  dbURL = '';
 
   constructor(public authService: AuthService, public af: AngularFireDatabase) {
-    this.items = af.list('/messages', {
+    this.dbURL = '/users/' + authService.userDetails.uid + '/tasks/';
+    this.items = af.list(this.dbURL, {
       query: {
         limitToLast: 50
       }
@@ -27,6 +29,11 @@ export class DashboardComponent implements OnInit {
     this.user = this.authService.authState;
 
    }
+
+   Send(desc: string) {
+    this.items.push({ message: desc });
+    this.msgVal = '';
+}
 
   ngOnInit() {
   }
