@@ -1,61 +1,33 @@
-<div class="container">
-
-  <!-- Static navbar -->
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Tick</a>
+<nav class="navigation_home sticky">
+    <div class="top_header">
+      <div class="logo">
+          <img src="/assets/tick.svg">
       </div>
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li class="active"><a>Home</a></li>
-          <li><a>About</a></li>
-        </ul>
-
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="" (click)="authService.logout()">Logout</a></li>
-        </ul>
-        
-      </div><!--/.nav-collapse -->
-    </div><!--/.container-fluid -->
-  </nav>
-
-  <!-- Main component for a primary marketing message or call to action -->
-  <div class="jumbotron">
-    <h1>Let's get some stuff done!</h1>
-    <p>Here's your list of tasks</p>
-    <p *ngIf="!authService.isLoggedIn()">
-      <a class="btn btn-lg btn-primary" href="" role="button" (click)="authService.logout()">Login</a>
-    </p>
-    <p *ngIf="authService.isLoggedIn()">
-      <a class="btn btn-lg btn-primary" href="" role="button" (click)="authService.logout()">Logout</a>
-    </p>
-  </div>
-
-  <div class="container">
-    <!-- <div class="row">
-        <div class="inputTask" style="text-align: center;">
-            <input type="text" placeholder="Enter a task!" id="taskValue" />
-          </div>
-    </div> -->
-
-    <div class="inputTask" style="text-align: center;">
-        <input type="text" id="message" placeholder="Enter a task!" (keyup.enter)="Send($event.target.value)" [(ngModel)]="msgVal" />
-        <div id="taskList">
-            <ul style="list-style: none;">
-              <li class="task" *ngFor="let item of items | async">{{item.message}}</li>
-            </ul>
-            <!-- <p *ngFor="let item of items | async">{{item.message}}</p> -->
-        </div>
+      <div class="nav_links">
+        <span><a href="" class="nav_pri">Home</a></span>
+        <span><a href="" class="nav_pri">About</a></span>
+        <span *ngIf="!authService.isLoggedIn()">
+          <a class="" href="" role="button" (click)="authService.logout()">Login</a>
+        </span>
+        <span *ngIf="authService.isLoggedIn()">
+          <a class="" href="" role="button" (click)="authService.logout()">Logout</a>
+        </span>
+      </div>
     </div>
-    
-  </div>
-  
+</nav>
 
-</div> <!-- /container -->
+<section class="top">
+  <div class="top_heading">
+    <h1>Let's get some stuff done!</h1>
+    <input type="text" id="message" placeholder="Add a task!" (keyup.enter)="Send($event.target.value)" [(ngModel)]="msgVal" />
+  </div>
+</section>
+
+<section class="task_list">
+  <h3>Here's your list of tasks</h3>
+  <div class="list">
+    <ul>
+      <li class="task" *ngFor="let item of items | async">{{item.message}}</li>
+    </ul>
+  </div>
+</section>
