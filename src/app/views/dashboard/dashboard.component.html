@@ -39,11 +39,22 @@
   </div>
 
   <div class="container">
-    <div class="row">
+    <!-- <div class="row">
         <div class="inputTask" style="text-align: center;">
             <input type="text" placeholder="Enter a task!" id="taskValue" />
           </div>
+    </div> -->
+
+    <div class="inputTask" style="text-align: center;">
+        <input type="text" id="message" placeholder="Enter a task!" (keyup.enter)="Send($event.target.value)" [(ngModel)]="msgVal" />
+        <div id="taskList">
+            <ul style="list-style: none;">
+              <li class="task" *ngFor="let item of items | async">{{item.message}}</li>
+            </ul>
+            <!-- <p *ngFor="let item of items | async">{{item.message}}</p> -->
+        </div>
     </div>
+    
   </div>
   
 

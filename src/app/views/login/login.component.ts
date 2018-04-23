@@ -13,26 +13,6 @@ export class LoginComponent implements OnInit {
 
   constructor(private authService: AuthService, private router: Router) {
   }
-
-
-   signInWithTwitter() {
-      this.authService.signInWithTwitter()
-      .then((res) => { 
-          this.router.navigate(['dashboard'])
-        })
-      .catch((err) => console.log(err));
-    }
-
-
-    signInWithFacebook() {
-      this.authService.signInWithFacebook()
-      .then((res) => {
-          this.router.navigate(['dashboard'])
-        })
-      .catch((err) => console.log(err));
-    }
-
-
     signInWithGoogle() {
       this.authService.signInWithGoogle()
       .then((res) => {
@@ -40,8 +20,6 @@ export class LoginComponent implements OnInit {
         })
       .catch((err) => console.log(err));
     }
-
-
 
   ngOnInit() {
   }

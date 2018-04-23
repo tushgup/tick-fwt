@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Router } from "@angular/router";
+import { Router } from '@angular/router';
 
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
@@ -7,10 +7,11 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class AuthService {
+  authState: Observable<firebase.User>;
   private user: Observable<firebase.User>;
-  private userDetails: firebase.User = null;
+  userDetails: firebase.User = null;
 
-  constructor(private _firebaseAuth: AngularFireAuth, private router: Router) { 
+  constructor(private _firebaseAuth: AngularFireAuth, private router: Router) {
       this.user = _firebaseAuth.authState;
 
       this.user.subscribe(
@@ -19,25 +20,12 @@ export class AuthService {
             this.userDetails = user;
             console.log(this.userDetails);
           }
+          // tslint:disable-next-line:one-line
           else {
             this.userDetails = null;
           }
         }
       );
-  }
-
-
-  signInWithTwitter() {
-    return this._firebaseAuth.auth.signInWithPopup(
-      new firebase.auth.TwitterAuthProvider()
-    )
-  }
-
-
-  signInWithFacebook() {
-    return this._firebaseAuth.auth.signInWithPopup(
-      new firebase.auth.FacebookAuthProvider()
-    )
   }
 
   signInWithGoogle() {
