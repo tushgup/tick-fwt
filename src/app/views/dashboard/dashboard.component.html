@@ -49,7 +49,18 @@
         <input type="text" id="message" placeholder="Enter a task!" (keyup.enter)="Send($event.target.value)" [(ngModel)]="msgVal" />
         <div id="taskList">
             <ul style="list-style: none;">
-              <li class="task" *ngFor="let item of items | async">{{item.message}}</li>
+              <li *ngFor="let item of items | async">
+                <div class="row task" [ngClass] = "{ 'greenTask': item.done == true }">
+                  <div class="col" (click)="complete(item)" >
+                      
+                          {{item.message}}
+                      
+                      <!-- <button type="input" class="btn btn-primary" style="background-color: white; color: black;" (click)="complete($event.currentTarget)">
+                          X
+                      </button> -->
+                  </div>          
+                </div>
+              </li>
             </ul>
             <!-- <p *ngFor="let item of items | async">{{item.message}}</p> -->
         </div>
