@@ -1,37 +1,123 @@
-#taskValue {
-    border: 1px solid rgba(200, 200, 200, 0.5);
-    padding: 1rem;
-    width: 75%;
-    box-shadow: 0px 3px 12px 0px rgba(0, 0, 0, 0.1);
-    font-size: 130%;
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-input#message {
-    background:#fff;
-    box-shadow: 0px 3px 12px 0px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(200, 200, 200, 0.5);
-    font-size:130%;
+* {
+    font-family: 'Nunito', sans-serif;
+    scroll-behavior: smooth;
+    background-color: #FFFFFF;
+    margin: 0px;
+}
+
+/*
+Start of the navigation bar.
+*/
+.navigation_home {
     width: 100%;
-    font-weight:400;
-    margin-bottom: 2rem;
-    padding:1.2em 1em;
+    padding-bottom: 2vh;
+    border-bottom: 1px solid #EBEBEB;
 }
 
-#taskList {
-    flex-direction: row;
-    flex-wrap:wrap;
-    width:100%;
+.top_header {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-/* #taskList > li {
+.logo {
+    width: 20%;
+    padding-left: 6vw;
+    padding-right: 6vw;
+    padding-top: 2vh;
+}
+
+.logo img {
+    width: 48px;
+    max-width: 48px;
+}
+
+.nav_links {
+    width: 80%;
+    padding-left: 6vw;
+    padding-right: 6vw;
+    margin-top: 4vh;
+}
+
+.nav_links > span {
+    width: 33.33%;
+    text-align: center;
+}
+
+.nav_links > span > a {
+    color: #9E9E9E;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.nav_links span a:hover {
+    color: #383838;
+    transform: scale(1.25);
+}
+
+.top {
+    width: 100%;
+}
+
+.top_heading {
+    width: 100%;
+    margin-top: 20vh;
+}
+
+.top_heading h1 {
+    color: #383838;
+    font-size: 3.20em;
+    letter-spacing: 4px;
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+#message {
+    width: 75%;
+    margin-top: 3vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    font-size: 1.96em;
+    box-shadow: 8px 10px 20px 0 rgba(46, 61, 73, .36);
+    border: none;
+    color: #383838;
+}
+
+.task_list {
+    width: 100%;
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+
+.task_list h3 {
+    color: #383838;
+    font-size: 1.96em;
+    margin-top: 8vh;
+    letter-spacing: 2px;
+    font-weight: lighter;
+}
+
+.list {
+    width: 100%;
+    text-align: left;
+    align-items: left;
+}
+
+.list ul {
     list-style: none;
-    background:#fff;
-    padding:1.4em;
-    color:#696969;
-    margin: 12px;
-    width:auto;
-    min-width:200px;
-} */
+}
 
 .task {
     box-shadow: 0px 3px 12px 0px rgba(0, 0, 0, 0.1);
