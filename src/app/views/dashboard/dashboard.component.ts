@@ -17,7 +17,6 @@ export class DashboardComponent implements OnInit {
   items: FirebaseListObservable<any[]>;
   msgVal = '';
   dbURL = '';
-  itemList = [];
 
   constructor(public authService: AuthService, public af: AngularFireDatabase) {
     this.dbURL = '/users/' + authService.userDetails.uid + '/tasks/';
