@@ -6,7 +6,6 @@
         </div>
         <div class="nav_links">
           <span><a href="" class="nav_pri">Home</a></span>
-          <span><a href="" class="nav_pri">About</a></span>
           <span *ngIf="!authService.isLoggedIn()">
             <a class="" href="" role="button" (click)="authService.logout()">Login</a>
           </span>
