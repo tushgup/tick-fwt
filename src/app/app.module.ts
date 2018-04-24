@@ -7,6 +7,7 @@ import { AppRoutes } from './app.routes';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './views/login/login.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
@@ -31,7 +32,8 @@ import { AuthGuard } from 'app/services/auth-guard.service';
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard, {provide: LocationStrategy, useClass: HashLocationStrategy}],
+  // providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
