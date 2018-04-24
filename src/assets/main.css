@@ -122,11 +122,11 @@ End of top navigation bar.
 }
 
 #pri_btn:hover {
-	box-shadow: 8px 10px 20px 0 rgba(46, 61, 73, .16); 
+	box-shadow: 8px 10px 20px 0 rgba(46, 61, 73, .16);
 }
 
 #pri_btn:focus {
-	box-shadow: 8px 10px 20px 0 rgba(46, 61, 73, .16); 
+	box-shadow: 8px 10px 20px 0 rgba(46, 61, 73, .16);
 }
 
 #sec_btn {
@@ -181,7 +181,7 @@ End of top navigation bar.
 }
 
 .features_heading h1 {
-	color: #383838;	
+	color: #383838;
 	text-align: center;
 	font-size: 2.16em;
 	letter-spacing: 3px;
@@ -252,8 +252,8 @@ End of top navigation bar.
 		padding-right: 10vw;
 	}
 
-	#sec_btn {
-		margin-left: 2rem;
+	#pri_btn {
+		margin-right: 2.16rem;
 	}
 
 	.order > .row {
