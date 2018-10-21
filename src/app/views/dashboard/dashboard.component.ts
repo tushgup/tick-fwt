@@ -44,6 +44,7 @@ export class DashboardComponent implements OnInit {
       const itemRef = this.af.list(this.dbURL);
 
       itemRef.update(itemKey, { done: !item['done'] });
+      
     }
 
   ngOnInit() {
